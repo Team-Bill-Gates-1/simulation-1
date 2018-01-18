@@ -23,6 +23,34 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nav {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+
+.nav {
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  background: #AB2A19;
+  color: white;
+  height: 40px;
+  padding: 20px 0;
+}
+
+.link-wrap {
+
+}
+
+.links {
+  background: #D34735;
 }
