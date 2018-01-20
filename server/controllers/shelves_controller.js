@@ -3,7 +3,7 @@ module.exports = {
         const dbInstance = req.app.get('db');
         const {params} = req;
 
-        dbInstance.get_shelves([params.id])
+        dbInstance.read_shelf([params.id])
         .then(shelves => res.status(200).send(shelves))
         .catch(err => {
             console.log(err);

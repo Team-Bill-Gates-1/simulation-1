@@ -22,7 +22,7 @@ class Bin extends Component {
     }
 
     componentDidMount(){
-        axios.get('/api/bin/:id')
+        axios.get(`/api/bin/${this.props.match.params.id}`)
         .then(res => this.setState({bin: res.data}))
     }
 
@@ -38,7 +38,7 @@ class Bin extends Component {
             price: this.refs.price.value
         }
 
-        axios.put(`/api/bin/${this.state.bin.id}`, bodyData)
+        axios.put(`/api/bin/${this.props.match.params.id}`, bodyData)
         .then(res => this.setState({ 
             bin: res.data,
             editMode: false
@@ -46,9 +46,9 @@ class Bin extends Component {
     }
 
     delete() {
-        axios.delete(`/api/bin/${this.state.bin.id}`)
+        axios.delete(`/api/bin/${this.props.match.params.id}`)
         .then(res => {
-            // route to shelf
+            this.props.history.push(`/shelf/${this.state.bin.id.split()[0]}`)
         })
     }
 
