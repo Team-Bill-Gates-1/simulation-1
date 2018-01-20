@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from '../../logo.png';
 import axios from 'axios';
+import './AddInventory.css';
 
 class Bin extends Component {
     constructor() {
@@ -41,12 +42,12 @@ class Bin extends Component {
                 </header>
                 <body>
                     <div>
-                        <label for="name">Name</label>
-                        <input id="name" ref="name" placeholder={this.state.bin.name} />
-                        <label for="price">Price</label>
-                        <input id="price" ref="price" placeholder={this.state.bin.price} />
-                        <button id="add-inventory" onClick={this.save}>+ Add Inventory</button>
+                        <p className="input-labels">Name</p>
+                        <input className="bin-input" id="name" ref="name" />
+                        <p className="input-labels">Price</p>
+                        <input className="bin-input" id="price" ref="price" />
                     </div>
+                    <button className="button" id="add-inventory" onClick={this.save}>+ Add Inventory</button>
                 </body>
             </div>
         )
