@@ -24,10 +24,13 @@ class Bin extends Component {
         }
 
         axios.post(`/api/bin/${this.state.bin.id}`, bodyData)
-        .then(res => this.setState({ 
-            bin: res.data,
-            editMode: false
-        }))
+        .then(res => {
+            this.setState({ 
+                bin: res.data,
+                editMode: false
+            });
+            this.props.history.push(`/shelf/${this.state.bin.id.split()[0]}`)
+        })
     }
 
     render() {

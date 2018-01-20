@@ -2,20 +2,21 @@ import React, {Component} from 'react';
 import './Shelf.css';
 import {Link} from 'react-router-dom';
 import logo from '../../logo.png';
+import axios from 'axios';
 
 class Shelf extends Component {
     constructor() {
         super();
         this.state = {
-            shelfData: [
-                { id: 1 }, 
-                { id: 2 }, 
-                null,
-                null, 
-                { id: 5 } 
-            ]
+            shelfData: []
         }
     }
+
+    componentDidMount(){
+        axios.get(`/api/shelf/${this.props.match.params.id}`)
+        .then(res => this.setState({shelfData: res.data}))
+    }
+
     render() {
         const bins = this.state.shelfData.map((bin, index) => (<Link to="/bin/:id"><div key={index} className={bin ? "bin-not-empty" : "bin-empty"}>{bin ? `Bin ${bin.id}` : "+ Add Inventory"}</div></Link>))
         return(

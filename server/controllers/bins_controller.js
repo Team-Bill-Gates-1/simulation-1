@@ -8,7 +8,7 @@ module.exports = {
         let shelf_ID = id.charAt(0);
         let bin_ID = id.charAt(1);
 
-        dbInstance.get_bin([shelf_ID, bin_ID])
+        dbInstance.read_bin([shelf_ID, bin_ID])
         .then( bin => res.status(200).send(bin))
         .catch( () => res.status(500).send());
     },
