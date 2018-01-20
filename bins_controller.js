@@ -67,7 +67,7 @@ createBin: (req, res) => {
     .catch( () => res.status(500).send())
 =======
     dbInstance.create_bin([shelf_ID, bin_ID, name, price])
-    .then( (inventory) => {if(inventory == 0){res.status(200).send()}})
+    .then( (inventory) => {if(inventory.length == 0){res.status(200).send()}})
     .catch( () => res.status(500).send());
 >>>>>>> master:server/controllers/bins_controller.js
 }
