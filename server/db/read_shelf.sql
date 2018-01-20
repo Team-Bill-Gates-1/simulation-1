@@ -1,1 +1,1 @@
-select * from shelfie;
+select * from shelfie where shelf_id = $1;
