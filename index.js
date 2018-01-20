@@ -4,8 +4,8 @@ const cors = require('cors');
 const massive = require('massive');
 const shelfBaseUrl = '/api/shelf';
 const binBaseUrl = '/api/bin';
-const bc = require('./controllers/bins_controller');
-const sc = require('./controllers/shelves_controller');
+const bc = require('./bins_controller');
+const sc = require('./shelves_controller');
 require('dotenv').config()
 
 const app = express();
