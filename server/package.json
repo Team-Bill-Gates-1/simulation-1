@@ -4,7 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "deploy": "now --public"
+  },
+  "now": {
+    "alias":"team-bill-gates-shelfie-app",
+    "name": "class-demo",
+    "env": {
+      "PORT": 8000,
+      "DB": "@db"
+    }
   },
   "keywords": [],
   "author": "",
@@ -16,4 +26,4 @@
     "express": "^4.16.2",
     "massive": "^4.6.3"
   }
-}
+ }
