@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Routes from './routes';
+import logo from './assets/logo.png';
 import './App.css';
 
 class App extends Component {
@@ -8,12 +9,12 @@ class App extends Component {
     return (
       <div className="App">
         <nav className='nav'>
-          <div>SHELFIE</div>
+          <img src={logo} alt="logo" id="logo"/><div>SHELFIE</div>
           <div className='link-wrap'>
-            <div className='links'> Shelf A </div>
-            <div className='links'> Shelf B </div>
-            <div className='links'> Shelf C </div>
-            <div className='links'> Shelf D </div>
+          <a href="#"><div className='links'> Shelf A</div> </a>
+          <a href="#"> <div className='links'> Shelf B </div></a>
+          <a href="#"><div className='links'> Shelf C </div></a>
+          <a href="#"> <div className='links'> Shelf D </div></a>
           </div>
         </nav>
         {Routes}

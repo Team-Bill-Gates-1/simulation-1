@@ -1,0 +1,55 @@
+#edit, #delete {
+    background-color: #d8d8d8;
+}
+
+#save {
+    background-color: #40f99b;    
+}
+
+.left-margin {
+    width: 10%;
+    height: 100%;
+}
+
+.button {
+    font-size: 30px;
+    border: none;
+    width: 200px;
+    border-radius: 3px;
+    padding: 10px 0;
+    cursor: pointer;
+    outline: none;
+    font-weight: 700;  
+    margin: 0 50px; 
+}
+
+.input-labels {
+    font-weight: 700;
+}
+
+.bin-input {
+    border: 1px solid #ab2a19;
+    border-radius: 3px;
+    padding: 12px;
+    min-width: 500px;
+    width: auto;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.bin-img {
+    margin-right: 30px;
+    height: 200px;
+    width: 200px;
+}
+
+.bin-page {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.bin-content {
+    display: flex;
+    flex-direction: column
+}
