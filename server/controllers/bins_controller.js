@@ -57,7 +57,7 @@ createBin: (req, res) => {
     //add if statement to only make endpoint accessible if there is not a bin object already
     //id $1 name $2 price $3
     dbInstance.create_bin([shelf_ID, bin_ID, name, price])
-    .then( (inventory) => {if(inventory == 0){res.status(200).send()}})
+    .then( (inventory) => {if(inventory.length == 0){res.status(200).send()}})
     .catch( () => res.status(500).send());
 }
 }
