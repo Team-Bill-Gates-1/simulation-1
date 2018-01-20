@@ -1,0 +1,30 @@
+.header {
+    height: 70px;
+    line-height: 70px;
+    width: 100%;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+}
+
+.logo {
+    background-color: #AB2A19;
+    color: white;
+    width: 20%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+}
+
+.title {
+    background-color: #D34735;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    width: 80%;
+    padding-left: 10px;
+}

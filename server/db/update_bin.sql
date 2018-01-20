@@ -1,0 +1,1 @@
+update shelfie set product_name = $3, product_price = $4 where shelf_id = $1 and bin_id = $2;
