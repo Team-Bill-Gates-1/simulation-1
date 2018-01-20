@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
-import Shelf from './Components/Shelf/Shelf';
+import Shelf from './Components/BinList/Shelf';
 
 
 export default (
