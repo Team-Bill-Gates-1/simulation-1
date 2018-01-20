@@ -25,7 +25,7 @@ module.exports = {
 
         
         dbInstance.update_bin([shelf_ID, bin_ID, product_name, product_price])
-        .then( () => res.status(200).send())
+        .then( (inventory) => {if(inventory.length > 0){res.status(200).send()}})
         .catch( () => res.status(500).send());
     },
 
@@ -56,8 +56,8 @@ createBin: (req, res) => {
 
     //id $1 name $2 price $3
     dbInstance.create_bin([shelf_ID, bin_ID, product_name, product_price])
-    .then( () => res.status(200).send())
-    .catch( () => res.status(500).send());
+    .then( (inventory) => {if(inventory.length == 0){res.status(200).send()}})
+    .catch( () => res.status(500).send())
 }
 }
 

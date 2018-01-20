@@ -16,7 +16,7 @@ class App extends Component {
             <div className='links'> Shelf D </div>
           </div>
         </nav>
-        <Routes />
+        {Routes}
       </div>
     );
   }
