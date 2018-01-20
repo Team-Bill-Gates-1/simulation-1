@@ -6,11 +6,16 @@ const shelfBaseUrl = '/api/shelf';
 const binBaseUrl = '/api/bin';
 const bc = require('./bins_controller');
 const sc = require('./shelves_controller');
+const path = require('path');
 require('dotenv').config()
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static(path.resolve(__dirname, "client", "build")));  
+app.get("/", (req, res) => {  
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+}); 
 massive(process.env.CONNECTION_STRING).then(dbInstance => {app.set('db', dbInstance)});
 
 app.get(`${shelfBaseUrl}/:id`, sc.getShelves);
