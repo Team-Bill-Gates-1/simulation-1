@@ -8,14 +8,14 @@ module.exports = {
         let shelf_ID = id.charAt(0);
         let bin_ID = id.charAt(1);
 
-        dbInstance.get_bin([shelf_ID, bin_ID])
+        dbInstance.read_bin([shelf_ID, bin_ID])
         .then( bin => res.status(200).send(bin))
         .catch( () => res.status(500).send());
     },
 
     updateBin: (req, res) => {
         const dbInstance = req.app.get('db');
-        const {name, price} = req.body;
+        const {product_name, product_price} = req.body;
         const {params} = req;
 
         //Split the id into shelf id and bin id
@@ -24,7 +24,7 @@ module.exports = {
         let bin_ID = id.charAt(1);
 
         
-        dbInstance.update_bin([shelf_ID, bin_ID, ])
+        dbInstance.update_bin([shelf_ID, bin_ID, product_name, product_price])
         .then( () => res.status(200).send())
         .catch( () => res.status(500).send());
     },
@@ -46,7 +46,7 @@ module.exports = {
 
 createBin: (req, res) => {
     const dbInstance = req.app.get('db');
-    const {name, price,} = req.body;
+    const {product_name, product_price,} = req.body;
     const {params} = req;
 
     //Split the id into shelf id and bin id
@@ -55,7 +55,7 @@ createBin: (req, res) => {
         let bin_ID = id.charAt(1);
 
     //id $1 name $2 price $3
-    dbInstance.create_bin([shelf_ID, bin_ID, name, price])
+    dbInstance.create_bin([shelf_ID, bin_ID, product_name, product_price])
     .then( () => res.status(200).send())
     .catch( () => res.status(500).send());
 }
