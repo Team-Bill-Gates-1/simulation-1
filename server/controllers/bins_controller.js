@@ -23,9 +23,9 @@ module.exports = {
         let shelf_ID = id.charAt(0);
         let bin_ID = id.charAt(1);
 
-        
+        //add if statement to make the endpoint only accessible if there is a bin object
         dbInstance.update_bin([shelf_ID, bin_ID, ])
-        .then( () => res.status(200).send())
+        .then( (inventory) => {if(inventory.length > 0){res.status(200).send()}})
         .catch( () => res.status(500).send());
     },
 
@@ -54,15 +54,10 @@ createBin: (req, res) => {
         let shelf_ID = id.charAt(0);
         let bin_ID = id.charAt(1);
 
+    //add if statement to only make endpoint accessible if there is not a bin object already
     //id $1 name $2 price $3
     dbInstance.create_bin([shelf_ID, bin_ID, name, price])
-    .then( () => res.status(200).send())
+    .then( (inventory) => {if(inventory == 0){res.status(200).send()}})
     .catch( () => res.status(500).send());
 }
 }
-
-
-
-//To do
-//Figure out how to manage endpoint accessibility
-//
